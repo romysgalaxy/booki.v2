@@ -1,47 +1,48 @@
 /* (=^ᆺ^=) GLOBAL (=^ᆺ^=) */
 
 :root {
-  --black-color: #000000;
-  --blue-color: #0065fc;
-  --gray-color: #d9d9d9;
-  --graybg-color: #f2f2f2;
-  --lightblue-color: #deebff;
+    --black-color: #000000;
+    --blue-color: #0065fc;
+    --gray-color: #d9d9d9;
+    --graybg-color: #f2f2f2;
+    --lightblue-color: #deebff;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  font-family: "Raleway",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  color: var(--black-color);
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color: var(--black-color);
 }
 
 #booki-layout {
-  max-width: 1400px;
-  margin: 0 auto;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 h1 {
-  font-size: 22px;
-  font-weight: 700;
+    font-size: 22px;
+    font-weight: 700;
 }
 
 p,
 a {
-  font-size: 16px;
-  font-weight: 400;
-  margin: 0;
-  text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    text-decoration: none;
 }
 
 @font-face {
-  font-family: raleway;
-  src: url(../font/raleway/static/Raleway-Regular.ttf);
+    font-family: raleway;
+    src: url(../font/raleway/static/Raleway-Regular.ttf);
 }
 
+
 @media screen and (min-width: 768px) {
-  body {
-    margin: 0 50px 0 50px;
-  }
+    body {
+        margin: 0 50px 0 50px;
+    }
 }
 
 /*  (=^ᆺ^=) MEDIAS QUERY (=^ᆺ^=)
@@ -55,686 +56,681 @@ a {
 /* (=^ᆺ^=) UTILITIES (=^ᆺ^=) */
 
 .py {
-  padding: 8px 0;
+    padding: 8px 0;
 }
 
 .my-2 {
-  margin: 20px 0;
+    margin: 20px 0;
 }
 
 .py-x {
-  padding: 16px 0;
+    padding: 16px 0;
 }
 
 .py-3 {
-  padding-top: 24px;
-  padding-bottom: 24px;
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 
 .py-5 {
-  padding-top: 34px;
-  padding-bottom: 34px;
+    padding-top: 34px;
+    padding-bottom: 34px;
 }
 
 .py-4 {
-  padding-top: 44px;
-  padding-bottom: 44px;
+    padding-top: 44px;
+    padding-bottom: 44px;
 }
 
 .px-2 {
-  padding-left: 20px;
-  padding-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .px-3 {
-  padding-left: 30px;
-  padding-right: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 /* (=^ᆺ^=) HEADER (=^ᆺ^=) */
 
 .booki-header {
-  height: 120px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 @media screen and (min-width: 768px) {
-  .booki-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: unset;
-  }
+    .booki-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: unset;
+    }
 }
 
 .booki-header__logo {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  display: flex;
-  justify-content: center;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 @media screen and (min-width: 768px) {
-  .booki-header__logo {
-    width: auto;
-    justify-content: unset;
-  }
+    .booki-header__logo {
+        width: auto;
+        justify-content: unset;
+    }
 }
 
 .booki-header__logo img {
-  width: 61px;
+    width: 61px;
 }
 
 .booki-header-nav {
-  display: flex;
-  width: 100%;
+    display: flex;
+    width: 100%;
 }
 
 @media screen and (min-width: 768px) {
-  .booki-header-nav {
-    width: auto;
-  }
+    .booki-header-nav {
+        width: auto;
+    }
 }
 
 .booki-header-nav a {
-  font-size: 16px;
+    font-size: 16px;
 }
 
 a.booki-header-nav__link {
-  width: 50%;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  border-bottom: 2px solid var(--gray-color);
+    width: 50%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid var(--gray-color);
 }
 
 a.booki-header-nav__link:focus,
 a.booki-header-nav__link:hover,
 a.active {
-  border-bottom: 2px solid var(--blue-color);
+    border-bottom: 2px solid var(--blue-color);
 }
 
-a.booki-header-nav__link:focus > span,
-a.booki-header-nav__link:hover > span,
-.active > span {
-  color: var(--blue-color);
+a.booki-header-nav__link:focus>span,
+a.booki-header-nav__link:hover>span,
+.active>span {
+    color: var(--blue-color);
 }
 
 @media screen and (min-width: 768px) {
-  a.booki-header-nav__link {
-    width: auto;
-    padding: 0 24px;
-  }
-  .active > span {
-    color: var(--black-color);
-  }
+    a.booki-header-nav__link {
+        width: auto;
+        padding: 0 24px;
+    }
 
-  a.booki-header-nav__link {
-    border-bottom: unset;
-    border-top: 2px solid transparent;
-    align-items: center;
-  }
+    .active>span {
+        color: var(--black-color);
+    }
 
-  a.booki-header-nav__link:focus,
-  a.booki-header-nav__link:hover {
-    border-bottom: unset;
-    border-top: 2px solid var(--blue-color);
-  }
+    a.booki-header-nav__link {
+        border-bottom: unset;
+        border-top: 2px solid transparent;
+        align-items: center;
+    }
+
+    a.booki-header-nav__link:focus,
+    a.booki-header-nav__link:hover {
+        border-bottom: unset;
+        border-top: 2px solid var(--blue-color);
+    }
 }
 
 /* (=^ᆺ^=) TITLE (=^ᆺ^=) */
 
 .booki-title h1 {
-  margin-bottom: 13px;
+    margin-bottom: 13px;
 }
 
 @media screen and (min-width: 768px) {
-  .booki-title {
-    padding: 31px 0 36px 0;
-  }
+    .booki-title {
+        padding: 31px 0 36px 0;
+    }
 }
 
 /* (=^ᆺ^=) FORM (=^ᆺ^=) */
 
 .booki-form {
-  display: flex;
-  max-width: 418px;
-  height: 50px;
-  width: 100%;
-  padding: 0px;
+    display: flex;
+    max-width: 418px;
+    height: 50px;
+    width: 100%;
+    padding: 0px;
 }
 
 .booki-form__img {
-  border-radius: 15px 0 0 15px;
-  display: flex;
-  min-width: 49px;
-  background-color: #f2f2f2;
-  justify-content: center;
+    border-radius: 15px 0 0 15px;
+    display: flex;
+    min-width: 49px;
+    background-color: #f2f2f2;
+    justify-content: center;
 }
 
 .booki-form img {
-  width: 16px;
+    width: 16px;
 }
 
 .booki-form__input {
-  display: flex;
-  border-top: 1px solid #f2f2f2;
-  border-bottom: 1px solid #f2f2f2;
-  width: 100%;
-  max-width: 253px;
-  min-width: 150px;
+    display: flex;
+    border-top: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+    width: 100%;
+    max-width: 253px;
+    min-width: 150px;
 }
 
 .booki-form input {
-  border: none;
+    border: none;
 }
 
 .booki-form input:focus {
-  outline: none;
+    outline: none;
 }
 
 .booki-form input[type="text"] {
-  border: none;
-  font-size: 18px;
-  font-weight: 700;
-  padding-left: 10px;
-}
-
-.booki-form input::placeholder {
-  padding-left: 10px;
-  font-family: raleway;
-  font-size: 18px;
-  color: var(--black-color);
-  font-weight: 700;
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    padding-left: 10px;
 }
 
 .booki-form__button {
-  display: flex;
-  min-width: 49px;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--blue-color);
-  border-radius: 0 15px 15px 0;
-  border: none;
+    display: flex;
+    min-width: 49px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue-color);
+    border-radius: 0 15px 15px 0;
+    border: none;
+    cursor: pointer;
 }
 
 .booki-form__button--search {
-  display: none;
-  font-family: raleway;
-  font-weight: 700;
-  font-size: 18px;
-  color: white;
+    display: none;
+    font-family: raleway;
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
 }
 
 .booki-form__button--icon {
-  width: 16px;
+    width: 16px;
 }
 
 @media screen and (min-width: 768px) {
-  form {
-    padding: 0 0 0 0 !important;
-  }
+    form {
+        padding: 0 0 0 0 !important;
+    }
 
-  .booki-form__button {
-    min-width: 132px;
-  }
+    .booki-form__button {
+        min-width: 132px;
+    }
 
-  .booki-form__button--search {
-    display: block;
-  }
+    .booki-form__button--search {
+        display: block;
+    }
 
-  .booki-form__button--icon {
-    display: none;
-  }
+    .booki-form__button--icon {
+        display: none;
+    }
 }
 
 /* (=^ᆺ^=) FILTER (=^ᆺ^=) */
 
 .booki-filter__title p {
-  font-size: 18px;
-  font-weight: 700;
-  margin: 0 20px 5px 0;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 20px 5px 0;
 }
 
 .booki-filter-all {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .booki-filter__tag {
-  display: flex;
-  border: 2px solid #d9d9d9;
-  border-radius: 25px;
-  height: 50px;
-  min-width: 146px;
-  padding: 0 0 0 10px;
-  margin: 5px 0px 5px 0;
+    display: flex;
+    border: 2px solid #d9d9d9;
+    border-radius: 25px;
+    height: 50px;
+    min-width: 146px;
+    padding: 0 0 0 10px;
+    margin: 5px 0px 5px 0;
+    cursor: pointer;
 }
 
 .booki-filter__tag:hover {
-  background-color: var(--lightblue-color);
+    background-color: var(--lightblue-color);
 }
 
 .booki-filter__tag img {
-  width: 20px;
-  margin-left: 10px;
+    width: 20px;
+    margin-left: 10px;
 }
 
 .booki-filter__tag p {
-  display: flex;
-  font-size: 11px;
-  margin: 0 10px 0 5px;
-  align-items: center;
-  font-weight: 700;
-}
-
-@media screen and (min-width: 768px) {
-  .booki-filter {
-    padding: 34px 20px 34px 20px;
-  }
-
-  .booki-filter-all {
-    justify-content: start;
-  }
-
-  .booki-filter__tag {
-    width: auto;
-    margin-right: 20px;
-  }
-
-  .booki-filter__tag p {
-    font-size: 17px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .booki-filter {
-    padding: 34px 0 34px 0;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .booki-filter {
     display: flex;
+    font-size: 11px;
+    margin: 0 10px 0 5px;
     align-items: center;
-  }
+    font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+    .booki-filter {
+        padding: 34px 20px 34px 20px;
+    }
+
+    .booki-filter-all {
+        justify-content: start;
+    }
+
+    .booki-filter__tag {
+        width: auto;
+        margin-right: 20px;
+    }
+
+    .booki-filter__tag p {
+        font-size: 17px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .booki-filter {
+        padding: 34px 0 34px 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .booki-filter {
+        display: flex;
+        align-items: center;
+    }
 }
 
 /* (=^ᆺ^=) INFO (=^ᆺ^=) */
 
 .booki-info {
-  display: flex;
-  padding-bottom: 39px;
+    display: flex;
+    padding-bottom: 39px;
 }
 
 .booki-info img {
-  width: 25px;
-  border: solid 1px #d9d9d9;
-  border-radius: 40px;
-  margin-right: 11px;
+    width: 25px;
+    border: solid 1px #d9d9d9;
+    border-radius: 40px;
+    margin-right: 11px;
 }
 
-.booki-info > p {
-  position: relative;
-  bottom: -5px;
+.booki-info>p {
+    position: relative;
+    bottom: -5px;
 }
 
 @media screen and (min-width: 768px) {
-  .booki-info {
-    padding: 0 0 39px 0;
-  }
+    .booki-info {
+        padding: 0 0 39px 0;
+    }
 }
 
 /* (=^ᆺ^=) DOUBLE SECTION (=^ᆺ^=) */
 
 .booki-double {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 @media screen and (min-width: 768px) {
-  .booki-double {
-    display: flex;
-    flex-direction: column-reverse;
-  }
+    .booki-double {
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }
 
 @media screen and (min-width: 1400px) {
-  .booki-double {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-  }
+    .booki-double {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+    }
 }
 
 /* (=^ᆺ^=) MOST POPULAR (=^ᆺ^=) */
 
 .booki-most-popular {
-  background-color: var(--graybg-color);
+    background-color: var(--graybg-color);
 }
 
 .booki-most-popular__title {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .booki-most-popular__title img {
-  width: 18px;
+    width: 18px;
 }
 
 .booki-most-popular-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .booki-most-popular__card {
-  display: flex;
-  width: 100%;
-  background-color: white;
-  border-radius: 20px;
-  justify-content: center;
-  border: 5px solid #ffffff;
-  margin: 10px 0px 10px 0;
-  box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.08);
+    display: flex;
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    justify-content: center;
+    border: 5px solid #ffffff;
+    margin: 10px 0px 10px 0;
+    box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.08);
 }
 
 .booki-most-popular__card article {
-  display: flex;
-  width: 100%;
+    display: flex;
+    width: 100%;
 }
 
 .booki-most-popular__card--left {
-  width: 60%;
+    width: 60%;
 }
 
 .booki-most-popular__card--left-img {
-  height: 144px;
+    height: 144px;
 }
 
 .booki-most-popular__card--left-img img {
-  width: 100%;
-  height: 144px;
-  object-fit: cover;
-  border-radius: 20px 0px 0px 20px;
+    width: 100%;
+    height: 144px;
+    object-fit: cover;
+    border-radius: 20px 0px 0px 20px;
 }
 
 .booki-most-popular__card-icon img {
-  width: 12px;
-  color: #0065fc;
+    width: 12px;
+    color: #0065fc;
 }
 
 .booki-most-popular__card--right {
-  width: 100%;
-  margin: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    width: 100%;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .booki-most-popular__card--title {
-  font-size: 16px;
-  font-weight: 700;
+    font-size: 16px;
+    font-weight: 700;
 }
 
 .booki-most-popular__card--content {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media screen and (min-width: 650px) {
-  .booki-most-popular__card {
-    width: 46%;
-  }
+    .booki-most-popular__card {
+        width: 46%;
+    }
 }
 
 @media screen and (min-width: 768px) {
-  .booki-most-popular {
-    border-radius: 20px;
-    padding: 40px 37px 40px 37px;
-  }
+    .booki-most-popular {
+        border-radius: 20px;
+        padding: 40px 37px 40px 37px;
+    }
 }
 
 @media screen and (min-width: 992px) {
-  .booki-most-popular__card {
-    width: 30%;
-  }
+    .booki-most-popular__card {
+        width: 30%;
+    }
 }
 
 @media screen and (min-width: 1400px) {
-  .booki-most-popular {
-    max-width: 420px;
-    margin-left: 40px;
-  }
+    .booki-most-popular {
+        max-width: 420px;
+        margin-left: 40px;
+    }
 
-  .booki-most-popular__card {
-    width: 100%;
-  }
+    .booki-most-popular__card {
+        width: 100%;
+    }
 }
 
 /* (=^ᆺ^=) ACCOMMODATION (=^ᆺ^=) */
 
 #accomodation {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .booki-accommodation h1 {
-  margin-bottom: 14px;
+    margin-bottom: 14px;
 }
 
 .booki-accommodation-row {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .booki-accommodation__card {
-  border-radius: 20px;
-  background-color: #ffffff;
-  border: 5px solid #ffffff;
-  box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.08);
-  margin: 10px 0 10px 0;
-  height: 199px;
-  width: 100%;
+    border-radius: 20px;
+    background-color: #ffffff;
+    border: 5px solid #ffffff;
+    box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.08);
+    margin: 10px 0 10px 0;
+    height: 199px;
+    width: 100%;
 }
 
 .booki-accommodation__card--img img {
-  width: 100%;
-  height: 124px;
-  object-fit: cover;
-  border-radius: 20px 20px 0px 0px;
+    width: 100%;
+    height: 124px;
+    object-fit: cover;
+    border-radius: 20px 20px 0px 0px;
 }
 
 .booki-accommodation__card--title {
-  font-size: 16px;
-  font-weight: 700;
-  margin-top: 2px;
-  margin-left: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 2px;
+    margin-left: 8px;
 }
 
 .booki-accommodation__card--content {
-  font-size: 14px;
-  margin-left: 8px;
-  margin-top: 4px;
+    font-size: 14px;
+    margin-left: 8px;
+    margin-top: 4px;
 }
 
 .booki-accommodation__card--icon {
-  margin-left: 8px;
+    margin-left: 8px;
 }
 
 .booki-accommodation__card--icon img {
-  width: 12px;
-  color: #0065fc;
+    width: 12px;
+    color: #0065fc;
+}
+
+.booki-accommodation__more {
+    cursor: pointer;
 }
 
 .booki-accommodation__more p {
-  font-size: 18px;
-  font-weight: 700;
-  display: none;
-  margin-top: 35px;
-  margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 35px;
+    margin-bottom: 10px;
 }
 
 @media screen and (min-width: 650px) {
-  .booki-accommodation-row {
-    justify-content: space-between;
-  }
+    .booki-accommodation-row {
+        justify-content: space-between;
+    }
 
-  .booki-accommodation__card {
-    width: 47%;
-  }
+    .booki-accommodation__card {
+        width: 47%;
+    }
 }
 
 @media screen and (min-width: 768px) {
-  .booki-accommodation {
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    padding: 40px 37px 40px 37px;
-    margin-bottom: 53px;
-  }
-
-  .booki-accommodation__more p {
-    display: block;
-  }
+    .booki-accommodation {
+        background-color: #f2f2f2;
+        border-radius: 20px;
+        padding: 40px 37px 40px 37px;
+        margin-bottom: 53px;
+    }
 }
 
 @media screen and (min-width: 992px) {
-  .booki-accommodation__card {
-    width: 31%;
-  }
+    .booki-accommodation__card {
+        width: 31%;
+    }
 }
 
 @media screen and (min-width: 1400px) {
-  .booki-accommodation {
-    max-width: 880px;
-    margin-bottom: 0;
-  }
-  .booki-accommodation__card {
-    width: 31%;
-  }
+    .booki-accommodation {
+        max-width: 880px;
+        margin-bottom: 0;
+    }
+
+    .booki-accommodation__card {
+        width: 31%;
+    }
 }
 
 /* (=^ᆺ^=) ACTIVITY (=^ᆺ^=) */
 
 .booki-activity h1 {
-  margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .booki-activity-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .booki-activity__card {
-  border-radius: 20px;
-  background-color: #ffffff;
-  box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.08);
-  margin: 15px 0px 15px 0;
-  height: 190px;
-  width: 100%;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.08);
+    margin: 15px 0px 15px 0;
+    height: 190px;
+    width: 100%;
 }
 
 .booki-activity__card--img img {
-  width: 100%;
-  height: 134px;
-  object-fit: cover;
-  border-radius: 20px 20px 0px 0px;
+    width: 100%;
+    height: 134px;
+    object-fit: cover;
+    border-radius: 20px 20px 0px 0px;
 }
 
 .booki-activity__card--title {
-  height: 45px;
-  display: flex;
-  align-items: center;
-  margin-left: 19px;
-  margin-right: 19px;
-  font-size: 16px;
-  font-weight: 700;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    margin-left: 19px;
+    margin-right: 19px;
+    font-size: 16px;
+    font-weight: 700;
 }
 
 @media screen and (min-width: 650px) {
-  .booki-activity__card {
-    width: 48%;
-    height: 267px;
-  }
+    .booki-activity__card {
+        width: 48%;
+        height: 267px;
+    }
 
-  .booki-activity__card--img img {
-    height: 221px;
-  }
+    .booki-activity__card--img img {
+        height: 221px;
+    }
 
-  .booki-activity__card--title {
-    height: 35px;
-  }
+    .booki-activity__card--title {
+        height: 35px;
+    }
 }
 
 @media screen and (min-width: 768px) {
-  .booki-activity__card {
-    width: 32%;
-  }
+    .booki-activity__card {
+        width: 32%;
+    }
 }
 
 @media screen and (min-width: 992px) {
-  .booki-activity__card {
-    width: 23%;
-  }
+    .booki-activity__card {
+        width: 23%;
+    }
 }
 
 @media screen and (min-width: 1300px) {
-  .booki-activity__card {
-    width: 23%;
-    height: 444px;
-  }
+    .booki-activity__card {
+        width: 23%;
+        height: 444px;
+    }
 
-  .booki-activity__card--img img {
-    height: 388px;
-  }
+    .booki-activity__card--img img {
+        height: 388px;
+    }
 
-  .booki-activity__card--title {
-    height: 45px;
-  }
+    .booki-activity__card--title {
+        height: 45px;
+    }
 }
 
 /* (=^ᆺ^=) FOOTER (=^ᆺ^=) */
 
 .booki-footer {
-  background-color: #f2f2f2;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .booki-footer__card {
-  width: 100%;
-  margin-bottom: 40px;
+    width: 100%;
+    margin-bottom: 40px;
 }
 
 .booki-footer--title {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 .booki-footer--nav ul {
-  list-style: none;
-  font-size: 16px;
-  line-height: 1.6;
+    list-style: none;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 .booki-footer--nav a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 @media screen and (min-width: 650px) {
-  .booki-footer__card {
-    width: 46%;
-  }
+    .booki-footer__card {
+        width: 46%;
+    }
 }
 
 @media screen and (min-width: 768px) {
-  .booki-footer__card {
-    width: 33%;
-  }
+    .booki-footer__card {
+        width: 33%;
+    }
 }
