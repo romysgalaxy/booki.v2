@@ -6,13 +6,22 @@
     --gray-color: #d9d9d9;
     --graybg-color: #f2f2f2;
     --lightblue-color: #deebff;
+    --card-shadow: 0 0 7px 7px rgba(0, 0, 0, 0.08);
+    --radius-lg: 20px;
+    --radius-sm: 15px;
 }
 
 * {
     margin: 0;
     padding: 0;
-    font-family: "Raleway", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+    font-family: "Raleway", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: var(--black-color);
+}
+
+html,
+body {
+    height: 100%;
 }
 
 #booki-layout {
@@ -29,29 +38,8 @@ p,
 a {
     font-size: 16px;
     font-weight: 400;
-    margin: 0;
     text-decoration: none;
 }
-
-@font-face {
-    font-family: raleway;
-    src: url(../font/raleway/static/Raleway-Regular.ttf);
-}
-
-
-@media screen and (min-width: 768px) {
-    body {
-        margin: 0 50px 0 50px;
-    }
-}
-
-/*  (=^ᆺ^=) MEDIAS QUERY (=^ᆺ^=)
-650px : 4 medias
-768px : 17 medias
-992px : 3 medias
-1300px : 1 media
-1400px : 4 medias
-*/
 
 /* (=^ᆺ^=) UTILITIES (=^ᆺ^=) */
 
@@ -68,18 +56,15 @@ a {
 }
 
 .py-3 {
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding: 24px 0;
 }
 
 .py-5 {
-    padding-top: 34px;
-    padding-bottom: 34px;
+    padding: 34px 0;
 }
 
 .py-4 {
-    padding-top: 44px;
-    padding-bottom: 44px;
+    padding: 44px 0;
 }
 
 .px-2 {
@@ -101,28 +86,11 @@ a {
     flex-direction: column;
 }
 
-@media screen and (min-width: 768px) {
-    .booki-header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: unset;
-    }
-}
-
 .booki-header__logo {
-    display: flex;
     width: 100%;
-    align-items: center;
     display: flex;
     justify-content: center;
-}
-
-@media screen and (min-width: 768px) {
-    .booki-header__logo {
-        width: auto;
-        justify-content: unset;
-    }
+    align-items: center;
 }
 
 .booki-header__logo img {
@@ -134,28 +102,22 @@ a {
     width: 100%;
 }
 
-@media screen and (min-width: 768px) {
-    .booki-header-nav {
-        width: auto;
-    }
-}
-
 .booki-header-nav a {
     font-size: 16px;
 }
 
 a.booki-header-nav__link {
     width: 50%;
-    text-decoration: none;
     display: flex;
     justify-content: center;
     border-bottom: 2px solid var(--gray-color);
 }
 
-a.booki-header-nav__link:focus,
-a.booki-header-nav__link:hover,
-a.active {
+.booki-header-nav .booki-header-nav__link:focus,
+.booki-header-nav .booki-header-nav__link:hover,
+.booki-header-nav .booki-header-nav__link.active {
     border-bottom: 2px solid var(--blue-color);
+    border-top: none;
 }
 
 a.booki-header-nav__link:focus>span,
@@ -164,57 +126,29 @@ a.booki-header-nav__link:hover>span,
     color: var(--blue-color);
 }
 
-@media screen and (min-width: 768px) {
-    a.booki-header-nav__link {
-        width: auto;
-        padding: 0 24px;
-    }
-
-    .active>span {
-        color: var(--black-color);
-    }
-
-    a.booki-header-nav__link {
-        border-bottom: unset;
-        border-top: 2px solid transparent;
-        align-items: center;
-    }
-
-    a.booki-header-nav__link:focus,
-    a.booki-header-nav__link:hover {
-        border-bottom: unset;
-        border-top: 2px solid var(--blue-color);
-    }
-}
-
 /* (=^ᆺ^=) TITLE (=^ᆺ^=) */
 
 .booki-title h1 {
     margin-bottom: 13px;
 }
 
-@media screen and (min-width: 768px) {
-    .booki-title {
-        padding: 31px 0 36px 0;
-    }
-}
-
 /* (=^ᆺ^=) FORM (=^ᆺ^=) */
 
 .booki-form {
     display: flex;
+    width: 100%;
     max-width: 418px;
     height: 50px;
-    width: 100%;
-    padding: 0px;
+    padding: 0 20px;
 }
 
 .booki-form__img {
-    border-radius: 15px 0 0 15px;
-    display: flex;
     min-width: 49px;
-    background-color: #f2f2f2;
+    border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+    background-color: var(--graybg-color);
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .booki-form img {
@@ -223,26 +157,23 @@ a.booki-header-nav__link:hover>span,
 
 .booki-form__input {
     display: flex;
-    border-top: 1px solid #f2f2f2;
-    border-bottom: 1px solid #f2f2f2;
     width: 100%;
     max-width: 253px;
     min-width: 150px;
+    border-top: 1px solid var(--graybg-color);
+    border-bottom: 1px solid var(--graybg-color);
 }
 
 .booki-form input {
     border: none;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .booki-form input:focus {
     outline: none;
-}
-
-.booki-form input[type="text"] {
-    border: none;
-    font-size: 18px;
-    font-weight: 700;
-    padding-left: 10px;
 }
 
 .booki-form__button {
@@ -251,39 +182,21 @@ a.booki-header-nav__link:hover>span,
     justify-content: center;
     align-items: center;
     background-color: var(--blue-color);
-    border-radius: 0 15px 15px 0;
+    color: #fff;
     border: none;
+    border-radius: var(--radius-sm);
     cursor: pointer;
 }
 
 .booki-form__button--search {
     display: none;
-    font-family: raleway;
     font-weight: 700;
     font-size: 18px;
-    color: white;
+    color: #fff;
 }
 
 .booki-form__button--icon {
     width: 16px;
-}
-
-@media screen and (min-width: 768px) {
-    form {
-        padding: 0 0 0 0 !important;
-    }
-
-    .booki-form__button {
-        min-width: 132px;
-    }
-
-    .booki-form__button--search {
-        display: block;
-    }
-
-    .booki-form__button--icon {
-        display: none;
-    }
 }
 
 /* (=^ᆺ^=) FILTER (=^ᆺ^=) */
@@ -302,13 +215,15 @@ a.booki-header-nav__link:hover>span,
 
 .booki-filter__tag {
     display: flex;
-    border: 2px solid #d9d9d9;
-    border-radius: 25px;
+    align-items: center;
     height: 50px;
-    min-width: 146px;
-    padding: 0 0 0 10px;
-    margin: 5px 0px 5px 0;
+    width: 49%;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border: 2px solid var(--gray-color);
+    border-radius: 25px;
     cursor: pointer;
+    transition: background-color .15s ease-in-out;
 }
 
 .booki-filter__tag:hover {
@@ -317,47 +232,14 @@ a.booki-header-nav__link:hover>span,
 
 .booki-filter__tag img {
     width: 20px;
-    margin-left: 10px;
 }
 
 .booki-filter__tag p {
     display: flex;
-    font-size: 11px;
-    margin: 0 10px 0 5px;
     align-items: center;
     font-weight: 700;
-}
-
-@media screen and (min-width: 768px) {
-    .booki-filter {
-        padding: 34px 20px 34px 20px;
-    }
-
-    .booki-filter-all {
-        justify-content: start;
-    }
-
-    .booki-filter__tag {
-        width: auto;
-        margin-right: 20px;
-    }
-
-    .booki-filter__tag p {
-        font-size: 17px;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .booki-filter {
-        padding: 34px 0 34px 0;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .booki-filter {
-        display: flex;
-        align-items: center;
-    }
+    font-size: 11px;
+    margin-left: 10px;
 }
 
 /* (=^ᆺ^=) INFO (=^ᆺ^=) */
@@ -369,9 +251,9 @@ a.booki-header-nav__link:hover>span,
 
 .booki-info img {
     width: 25px;
-    border: solid 1px #d9d9d9;
-    border-radius: 40px;
     margin-right: 11px;
+    border: 1px solid var(--gray-color);
+    border-radius: 40px;
 }
 
 .booki-info>p {
@@ -379,32 +261,11 @@ a.booki-header-nav__link:hover>span,
     bottom: -5px;
 }
 
-@media screen and (min-width: 768px) {
-    .booki-info {
-        padding: 0 0 39px 0;
-    }
-}
-
 /* (=^ᆺ^=) DOUBLE SECTION (=^ᆺ^=) */
 
 .booki-double {
     display: flex;
     flex-direction: column;
-}
-
-@media screen and (min-width: 768px) {
-    .booki-double {
-        display: flex;
-        flex-direction: column-reverse;
-    }
-}
-
-@media screen and (min-width: 1400px) {
-    .booki-double {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row-reverse;
-    }
 }
 
 /* (=^ᆺ^=) MOST POPULAR (=^ᆺ^=) */
@@ -432,12 +293,12 @@ a.booki-header-nav__link:hover>span,
 .booki-most-popular__card {
     display: flex;
     width: 100%;
-    background-color: white;
-    border-radius: 20px;
+    margin: 10px 0;
+    background-color: #fff;
+    border: 5px solid #fff;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--card-shadow);
     justify-content: center;
-    border: 5px solid #ffffff;
-    margin: 10px 0px 10px 0;
-    box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.08);
 }
 
 .booki-most-popular__card article {
@@ -457,12 +318,7 @@ a.booki-header-nav__link:hover>span,
     width: 100%;
     height: 144px;
     object-fit: cover;
-    border-radius: 20px 0px 0px 20px;
-}
-
-.booki-most-popular__card-icon img {
-    width: 12px;
-    color: #0065fc;
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
 }
 
 .booki-most-popular__card--right {
@@ -482,34 +338,8 @@ a.booki-header-nav__link:hover>span,
     font-size: 14px;
 }
 
-@media screen and (min-width: 650px) {
-    .booki-most-popular__card {
-        width: 46%;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .booki-most-popular {
-        border-radius: 20px;
-        padding: 40px 37px 40px 37px;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .booki-most-popular__card {
-        width: 30%;
-    }
-}
-
-@media screen and (min-width: 1400px) {
-    .booki-most-popular {
-        max-width: 420px;
-        margin-left: 40px;
-    }
-
-    .booki-most-popular__card {
-        width: 100%;
-    }
+.booki-most-popular__card-icon img {
+    width: 12px;
 }
 
 /* (=^ᆺ^=) ACCOMMODATION (=^ᆺ^=) */
@@ -528,33 +358,31 @@ a.booki-header-nav__link:hover>span,
 }
 
 .booki-accommodation__card {
-    border-radius: 20px;
-    background-color: #ffffff;
-    border: 5px solid #ffffff;
-    box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.08);
-    margin: 10px 0 10px 0;
-    height: 199px;
     width: 100%;
+    height: 199px;
+    margin: 10px 0;
+    background-color: #fff;
+    border: 5px solid #fff;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--card-shadow);
 }
 
 .booki-accommodation__card--img img {
     width: 100%;
     height: 124px;
     object-fit: cover;
-    border-radius: 20px 20px 0px 0px;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
 .booki-accommodation__card--title {
     font-size: 16px;
     font-weight: 700;
-    margin-top: 2px;
-    margin-left: 8px;
+    margin: 2px 0 0 8px;
 }
 
 .booki-accommodation__card--content {
     font-size: 14px;
-    margin-left: 8px;
-    margin-top: 4px;
+    margin: 4px 0 0 8px;
 }
 
 .booki-accommodation__card--icon {
@@ -563,7 +391,6 @@ a.booki-header-nav__link:hover>span,
 
 .booki-accommodation__card--icon img {
     width: 12px;
-    color: #0065fc;
 }
 
 .booki-accommodation__more {
@@ -577,45 +404,9 @@ a.booki-header-nav__link:hover>span,
     margin-bottom: 10px;
 }
 
-@media screen and (min-width: 650px) {
-    .booki-accommodation-row {
-        justify-content: space-between;
-    }
-
-    .booki-accommodation__card {
-        width: 47%;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .booki-accommodation {
-        background-color: #f2f2f2;
-        border-radius: 20px;
-        padding: 40px 37px 40px 37px;
-        margin-bottom: 53px;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .booki-accommodation__card {
-        width: 31%;
-    }
-}
-
-@media screen and (min-width: 1400px) {
-    .booki-accommodation {
-        max-width: 880px;
-        margin-bottom: 0;
-    }
-
-    .booki-accommodation__card {
-        width: 31%;
-    }
-}
-
 /* (=^ᆺ^=) ACTIVITY (=^ᆺ^=) */
 
-.booki-activity h1 {
+.booki-activity h2 {
     margin-bottom: 15px;
 }
 
@@ -626,77 +417,34 @@ a.booki-header-nav__link:hover>span,
 }
 
 .booki-activity__card {
-    border-radius: 20px;
-    background-color: #ffffff;
-    box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.08);
-    margin: 15px 0px 15px 0;
-    height: 190px;
     width: 100%;
+    height: 190px;
+    margin: 15px 0;
+    background-color: #fff;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--card-shadow);
 }
 
 .booki-activity__card--img img {
     width: 100%;
     height: 134px;
     object-fit: cover;
-    border-radius: 20px 20px 0px 0px;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
 .booki-activity__card--title {
     height: 45px;
     display: flex;
     align-items: center;
-    margin-left: 19px;
-    margin-right: 19px;
+    margin: 0 19px;
     font-size: 16px;
     font-weight: 700;
-}
-
-@media screen and (min-width: 650px) {
-    .booki-activity__card {
-        width: 48%;
-        height: 267px;
-    }
-
-    .booki-activity__card--img img {
-        height: 221px;
-    }
-
-    .booki-activity__card--title {
-        height: 35px;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .booki-activity__card {
-        width: 32%;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .booki-activity__card {
-        width: 23%;
-    }
-}
-
-@media screen and (min-width: 1300px) {
-    .booki-activity__card {
-        width: 23%;
-        height: 444px;
-    }
-
-    .booki-activity__card--img img {
-        height: 388px;
-    }
-
-    .booki-activity__card--title {
-        height: 45px;
-    }
 }
 
 /* (=^ᆺ^=) FOOTER (=^ᆺ^=) */
 
 .booki-footer {
-    background-color: #f2f2f2;
+    background-color: var(--graybg-color);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -723,14 +471,203 @@ a.booki-header-nav__link:hover>span,
     text-decoration: none;
 }
 
-@media screen and (min-width: 650px) {
+/* (=^ᆺ^=) MEDIA QUERIES — TABLETTE & PLUS (>=1024px) (=^ᆺ^=)*/
+
+@media screen and (min-width: 1024px) {
+
+    body {
+        margin: 0 50px;
+    }
+
+    /* (=^ᆺ^=) HEADER (=^ᆺ^=) */
+
+    .booki-header {
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .booki-header__logo {
+        width: auto;
+        justify-content: flex-start;
+    }
+
+    .booki-header-nav {
+        width: auto;
+    }
+
+    a.booki-header-nav__link {
+        width: 150px;
+        border-bottom: 2px solid transparent;
+        align-items: center;
+    }
+
+    .active {
+        border-top: 2px solid var(--blue-color);
+    }
+
+    a.booki-header-nav__link:hover,
+    a.booki-header-nav__link:focus {
+        border-top: 2px solid var(--blue-color);
+        border-bottom: none;
+    }
+
+    /* (=^ᆺ^=) TITLE (=^ᆺ^=) */
+
+    .booki-title {
+        padding: 31px 0 36px 0;
+    }
+
+    /* (=^ᆺ^=) FORM (=^ᆺ^=) */
+
+    .booki-form {
+        padding: 0;
+    }
+
+    .booki-form__button {
+        min-width: 132px;
+        border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .booki-form__button--search {
+        display: block;
+    }
+
+    .booki-form__button--icon {
+        display: none;
+    }
+
+    /* (=^ᆺ^=) FILTER (=^ᆺ^=) */
+
+    .booki-filter {
+        padding: 34px 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .booki-filter-all {
+        justify-content: flex-start;
+    }
+
+    .booki-filter__tag {
+        width: auto;
+        margin-right: 20px;
+    }
+
+    .booki-filter__tag p {
+        font-size: 17px;
+    }
+
+    /* (=^ᆺ^=) INFO (=^ᆺ^=) */
+
+    .booki-info {
+        padding: 0 0 39px 0;
+    }
+
+    /* (=^ᆺ^=) DOUBLE (=^ᆺ^=) */
+
+    .booki-double {
+        flex-direction: column-reverse;
+    }
+
+    /* (=^ᆺ^=) MOST POPULAR (=^ᆺ^=) */
+
+    .booki-most-popular__card {
+        margin: 10px;
+    }
+
+    .booki-most-popular {
+        border-radius: var(--radius-lg);
+    }
+
+    .booki-most-popular-row {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    /* (=^ᆺ^=) ACCOMMODATION (=^ᆺ^=) */
+
+    .booki-accommodation {
+        background-color: var(--graybg-color);
+        border-radius: var(--radius-lg);
+        padding: 40px 37px;
+        margin-bottom: 53px;
+    }
+
+    .booki-accommodation-row {
+        justify-content: space-between;
+    }
+
+    .booki-accommodation__card {
+        width: 31%;
+    }
+
+    /* (=^ᆺ^=) ACTIVITY (=^ᆺ^=) */
+
+    .booki-activity__card {
+        width: 23%;
+        height: 300px;
+    }
+
+    .booki-activity__card--img img {
+        height: 244px;
+    }
+
+    .booki-activity__card--title {
+        height: 45px;
+    }
+
+    /* (=^ᆺ^=) FOOTER (=^ᆺ^=) */
+
     .booki-footer__card {
-        width: 46%;
+        width: 33%;
     }
 }
 
-@media screen and (min-width: 768px) {
-    .booki-footer__card {
-        width: 33%;
+/* (=^ᆺ^=) MEDIA QUERIES — DESKTOP (>=1440px) (=^ᆺ^=) */
+
+@media screen and (min-width: 1440px) {
+
+    /* (=^ᆺ^=) DOUBLE (=^ᆺ^=) */
+
+    .booki-double {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    /* (=^ᆺ^=) MOST POPULAR (=^ᆺ^=) */
+
+    .booki-most-popular {
+        padding: 40px 37px;
+        width: 430px;
+    }
+
+    .booki-most-popular-row {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .booki-most-popular__card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* (=^ᆺ^=) ACCOMMODATION (=^ᆺ^=) */
+
+    .booki-accommodation {
+        width: 880px;
+        margin-bottom: 0;
+    }
+
+    /* (=^ᆺ^=) ACTIVITY (=^ᆺ^=) */
+
+    .booki-activity__card {
+        height: 444px;
+    }
+
+    .booki-activity__card--img img {
+        height: 388px;
     }
 }
