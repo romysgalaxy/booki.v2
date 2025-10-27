@@ -77,6 +77,28 @@ a {
     padding-right: 30px;
 }
 
+.icon-size {
+    font-size: 11px;
+    line-height: 1;
+}
+
+.icon-size-plus {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.icon-blue {
+    color: var(--blue-color);
+}
+
+.icon-gray {
+    color: var(--graybg-color);
+}
+
+.icon-white {
+    color: #ffffff;
+}
+
 /* (=^ᆺ^=) HEADER (=^ᆺ^=) */
 
 .booki-header {
@@ -230,10 +252,6 @@ a.booki-header-nav__link:hover>span,
     background-color: var(--lightblue-color);
 }
 
-.booki-filter__tag img {
-    width: 20px;
-}
-
 .booki-filter__tag p {
     display: flex;
     align-items: center;
@@ -246,18 +264,22 @@ a.booki-header-nav__link:hover>span,
 
 .booki-info {
     display: flex;
+    align-items: center;
     padding-bottom: 39px;
 }
 
-.booki-info img {
-    width: 25px;
+.booki-info i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    width: 29px;
     margin-right: 11px;
     border: 1px solid var(--gray-color);
-    border-radius: 40px;
+    border-radius: 67px;
 }
 
 .booki-info>p {
-    position: relative;
     bottom: -5px;
 }
 
@@ -534,7 +556,7 @@ a.booki-header-nav__link:hover>span,
         display: block;
     }
 
-    .booki-form__button--icon {
+    .booki-form__button i {
         display: none;
     }
 
@@ -657,7 +679,7 @@ a.booki-header-nav__link:hover>span,
     /* (=^ᆺ^=) ACCOMMODATION (=^ᆺ^=) */
 
     .booki-accommodation {
-        width: 880px;
+        width: 920px;
         margin-bottom: 0;
     }
 
