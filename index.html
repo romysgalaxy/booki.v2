@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -15,43 +15,46 @@
 
 <body>
     <div id="booki-layout">
-        <div class="booki-header">
-            <header class="booki-header__logo py-3">
-                <img src="images/logo/Booki.png" alt="logo Booki">
-            </header>
-            <nav class="booki-header-nav">
-                <a class="booki-header-nav__link active py-3" href="#accomodation">
-                    <span>Hebergements</span>
-                </a>
-                <a class="booki-header-nav__link py-3" href="#activities">
-                    <span>Activités</span>
-                </a>
+        <!-- HEADER -->
+        <header class="booki-header">
+            <a class="booki-header__logo py-3" href="#" aria-label="Accueil Booki">
+                <img src="images/logo/Booki.png" alt="Booki">
+            </a>
+            <nav class="booki-header-nav" aria-label="Navigation principale">
+                <a class="booki-header-nav__link py-3" href="#accomodation"><span>Hébergements</span></a>
+                <a class="booki-header-nav__link py-3" href="#activities"><span>Activités</span></a>
             </nav>
-        </div>
+        </header>
+
         <main>
-            <div class="booki-title px-2 py-4">
+            <!-- TITRE -->
+            <section class="booki-title px-2 py-4">
                 <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
                 <p>En plein centre-ville ou en pleine nature</p>
-            </div>
-            <form action="#">
+            </section>
+
+            <!-- FORM RECHERCHE -->
+            <form action="#" role="search" aria-label="Recherche d'hébergement">
                 <div class="booki-form">
-                    <div class="booki-form__img">
+                    <div class="booki-form__img" aria-hidden="true">
                         <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                     </div>
                     <div class="booki-form__input">
-                        <input type="text">
+                        <input type="text" name="city" aria-label="Ville" autocomplete="off" required>
                     </div>
-                    <button class="booki-form__button">
+                    <button class="booki-form__button" type="submit">
                         <span class="booki-form__button--search">Rechercher</span>
                         <i class="fa-solid fa-magnifying-glass icon-white" aria-hidden="true"></i>
                     </button>
                 </div>
             </form>
-            <div class="booki-filter px-2 py-5">
-                <div class="booki-filter__title">
-                    <p>Filtres</p>
-                </div>
-                <div class="booki-filter-all">
+
+            <!-- FILTRES -->
+            <section class="booki-filter px-2 py-5" aria-label="Filtres">
+                <h2 class="booki-filter__title">
+                    Filtres
+                </h2>
+                <div class="booki-filter-all" role="group" aria-label="Catégories de filtres">
                     <div class="booki-filter__tag">
                         <i class="fa-solid fa-money-bill-1 icon-size-plus icon-blue" aria-hidden="true"></i>
                         <p>Economique</p>
@@ -72,249 +75,225 @@
                         <p>Nos pépites</p>
                     </div>
                 </div>
-            </div>
-            <div class="booki-info px-2">
-                <div class="booki-info__icon">
-                    <i class="fa-solid fa-info icon-blue" aria-hidden="true"></i>
-                </div>
-                <p>Plus de 500 logements sont disponibles dans cette ville</p>
-            </div>
+            </section>
 
+            <!-- INFO -->
+            <p class="booki-info">
+                <i class="fa-solid fa-info icon-blue" aria-hidden="true"></i>
+                <span>Plus de 500 logements sont disponibles dans cette ville</span>
+            </p>
+
+            <!-- DOUBLE COL / POPULAIRES + HEBERGEMENTS -->
             <div class="booki-double">
-                <section class="booki-most-popular px-2 py-3">
+                <!-- POPULAIRES -->
+                <section class="booki-most-popular px-2 py-3" aria-labelledby="popular-title">
                     <div class="booki-most-popular__title">
-                        <h2>Les plus populaires</h2>
+                        <h2 id="popular-title">Les plus populaires</h2>
                         <i class="fa-solid fa-chart-line icon-blue" aria-hidden="true"></i>
                     </div>
+
                     <div class="booki-most-popular-row">
                         <a href="#" class="booki-most-popular__card">
                             <article>
                                 <div class="booki-most-popular__card--left">
                                     <div class="booki-most-popular__card--left-img">
-                                        <img src="images/hebergements/emile-guillemot.jpg" alt="accommodation image">
+                                        <img src="images/hebergements/emile-guillemot.jpg"
+                                            alt="Hôtel Le soleil du matin">
                                     </div>
                                 </div>
                                 <div class="booki-most-popular__card--right">
-                                    <div class="booki-most-popular--top">
-                                        <h3 class="booki-most-popular__card--title">
-                                            Hôtel Le soleil du matin
-                                        </h3>
-                                        <div class="booki-most-popular__card--content">
-                                            Nuit à partir de 128€
-                                        </div>
-                                    </div>
+                                    <h3 class="booki-most-popular__card--title">Hôtel Le soleil du matin</h3>
+                                    <p class="booki-most-popular__card--content">Nuit à partir de 128€</p>
                                     <div class="booki-most-popular__card-icon">
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-gray" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-gray"></i>
                                     </div>
                                 </div>
                             </article>
                         </a>
+
                         <a href="#" class="booki-most-popular__card">
                             <article>
                                 <div class="booki-most-popular__card--left">
                                     <div class="booki-most-popular__card--left-img">
-                                        <img src="images/hebergements/aw-creative.jpg" alt="accommodation image">
+                                        <img src="images/hebergements/aw-creative.jpg"
+                                            alt="Chambres d’hôtes Au cœur de l’eau">
                                     </div>
                                 </div>
                                 <div class="booki-most-popular__card--right">
-                                    <div class="booki-most-popular-top">
-                                        <h3 class="booki-most-popular__card--title">
-                                            Chambres d’hôtes Au cœur de l’eau
-                                        </h3>
-                                        <div class="booki-most-popular__card--content">
-                                            Nuit à partir de 71€
-                                        </div>
-                                    </div>
+                                    <h3 class="booki-most-popular__card--title">Chambres d’hôtes Au cœur de l’eau</h3>
+                                    <p class="booki-most-popular__card--content">Nuit à partir de 71€</p>
                                     <div class="booki-most-popular__card-icon">
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-gray" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-gray"></i>
                                     </div>
                                 </div>
                             </article>
                         </a>
+
                         <a href="#" class="booki-most-popular__card">
                             <article>
                                 <div class="booki-most-popular__card--left">
                                     <div class="booki-most-popular__card--left-img">
-                                        <img src="images/hebergements/febrian-zakaria.jpg" alt="accommodation image">
+                                        <img src="images/hebergements/febrian-zakaria.jpg" alt="Hôtel Bleu et Blanc">
                                     </div>
                                 </div>
                                 <div class="booki-most-popular__card--right">
-                                    <div class="booki-most-popular-top">
-                                        <h3 class="booki-most-popular__card--title">
-                                            Hôtel Bleu et Blanc
-                                        </h3>
-                                        <div class="booki-most-popular__card--content">
-                                            Nuit à partir de 68€
-                                        </div>
-                                    </div>
+                                    <h3 class="booki-most-popular__card--title">Hôtel Bleu et Blanc</h3>
+                                    <p class="booki-most-popular__card--content">Nuit à partir de 68€</p>
                                     <div class="booki-most-popular__card-icon">
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-gray" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-gray"></i>
                                     </div>
                                 </div>
                             </article>
                         </a>
                     </div>
                 </section>
+
+                <!-- HEBERGEMENTS -->
                 <section class="booki-accommodation px-2 py-3">
                     <h2 id="accomodation">Hébergements à Marseille</h2>
+
                     <div class="booki-accommodation-row">
                         <a href="#" class="booki-accommodation__card">
                             <article>
                                 <div class="booki-accommodation__card--img">
-                                    <img src="images/hebergements/marcus-loke.jpg" alt="accommodation image">
+                                    <img src="images/hebergements/marcus-loke.jpg" alt="Auberge La Canebière">
                                 </div>
                                 <div>
-                                    <h3 class="booki-accommodation__card--title">
-                                        Auberge La Canebière
-                                    </h3>
-                                    <div class="booki-accommodation__card--content">
-                                        Nuit à partir de 25€
-                                    </div>
+                                    <h3 class="booki-accommodation__card--title">Auberge La Canebière</h3>
+                                    <p class="booki-accommodation__card--content">Nuit à partir de 25€</p>
                                     <div class="booki-accommodation__card--icon">
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-gray" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-gray"></i>
                                     </div>
                                 </div>
                             </article>
                         </a>
+
                         <a href="#" class="booki-accommodation__card">
                             <article>
                                 <div class="booki-accommodation__card--img">
-                                    <img src="images/hebergements/fred-kleber.jpg" alt="accommodation image">
+                                    <img src="images/hebergements/fred-kleber.jpg" alt="Hôtel Du Port">
                                 </div>
                                 <div>
-                                    <h3 class="booki-accommodation__card--title">
-                                        Hôtel Du Port
-                                    </h3>
-                                    <div class="booki-accommodation__card--content">
-                                        Nuit à partir de 52€
-                                    </div>
+                                    <h3 class="booki-accommodation__card--title">Hôtel Du Port</h3>
+                                    <p class="booki-accommodation__card--content">Nuit à partir de 52€</p>
                                     <div class="booki-accommodation__card--icon">
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-gray" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-gray"></i>
                                     </div>
                                 </div>
                             </article>
                         </a>
+
                         <a href="#" class="booki-accommodation__card">
                             <article>
                                 <div class="booki-accommodation__card--img">
-                                    <img src="images/hebergements/reisetopia.jpg" alt="accommodation image">
+                                    <img src="images/hebergements/reisetopia.jpg" alt="Hôtel Les mouettes">
                                 </div>
                                 <div>
-                                    <h3 class="booki-accommodation__card--title">
-                                        Hôtel Les mouettes
-                                    </h3>
-                                    <div class="booki-accommodation__card--content">
-                                        Nuit à partir de 76€
-                                    </div>
+                                    <h3 class="booki-accommodation__card--title">Hôtel Les mouettes</h3>
+                                    <p class="booki-accommodation__card--content">Nuit à partir de 76€</p>
                                     <div class="booki-accommodation__card--icon">
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-gray" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-gray"></i>
                                     </div>
                                 </div>
                             </article>
                         </a>
+
                         <a href="#" class="booki-accommodation__card">
                             <article>
                                 <div class="booki-accommodation__card--img">
-                                    <img src="images/hebergements/annie-spratt.jpg" alt="accommodation image">
+                                    <img src="images/hebergements/annie-spratt.jpg" alt="Hôtel de la mer">
                                 </div>
                                 <div>
-                                    <h3 class="booki-accommodation__card--title">
-                                        Hôtel de la mer
-                                    </h3>
-                                    <div class="booki-accommodation__card--content">
-                                        Nuit à partir de 46€
-                                    </div>
+                                    <h3 class="booki-accommodation__card--title">Hôtel de la mer</h3>
+                                    <p class="booki-accommodation__card--content">Nuit à partir de 46€</p>
                                     <div class="booki-accommodation__card--icon">
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-gray" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-gray"></i>
                                     </div>
                                 </div>
                             </article>
                         </a>
+
                         <a href="#" class="booki-accommodation__card">
                             <article>
                                 <div class="booki-accommodation__card--img">
-                                    <img src="images/hebergements/nicate-lee.jpg" alt="accommodation image">
+                                    <img src="images/hebergements/nicate-lee.jpg" alt="Auberge Le panier">
                                 </div>
                                 <div>
-                                    <h3 class="booki-accommodation__card--title">
-                                        Auberge Le panier
-                                    </h3>
-                                    <div class="booki-accommodation__card--content">
-                                        Nuit à partir de 23€
-                                    </div>
+                                    <h3 class="booki-accommodation__card--title">Auberge Le panier</h3>
+                                    <p class="booki-accommodation__card--content">Nuit à partir de 23€</p>
                                     <div class="booki-accommodation__card--icon">
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-gray" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-gray"></i>
                                     </div>
                                 </div>
                             </article>
                         </a>
+
                         <a href="#" class="booki-accommodation__card">
                             <article>
                                 <div class="booki-accommodation__card--img">
-                                    <img src="images/hebergements/febrian-zakaria.jpg" alt="accommodation image">
+                                    <img src="images/hebergements/febrian-zakaria.jpg" alt="Hôtel Chez Amina">
                                 </div>
                                 <div>
-                                    <h3 class="booki-accommodation__card--title">
-                                        Hôtel Chez Amina
-                                    </h3>
-                                    <div class="booki-accommodation__card--content">
-                                        Nuit à partir de 96€
-                                    </div>
+                                    <h3 class="booki-accommodation__card--title">Hôtel Chez Amina</h3>
+                                    <p class="booki-accommodation__card--content">Nuit à partir de 96€</p>
                                     <div class="booki-accommodation__card--icon">
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-blue" aria-hidden="true"></i>
-                                        <i class="fa-solid fa-star icon-size icon-gray" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-blue"></i>
+                                        <i class="fa-solid fa-star icon-size icon-gray"></i>
                                     </div>
                                 </div>
                             </article>
                         </a>
                     </div>
+
                     <div class="booki-accommodation__more">
                         <p>Afficher plus</p>
                     </div>
                 </section>
             </div>
+
+            <!-- ACTIVITÉS -->
             <section class="booki-activity px-2 py-4">
                 <h2 id="activities">Activités à Marseille</h2>
                 <div class="booki-activity-row">
                     <a href="#" class="booki-activity__card">
                         <article>
                             <div class="booki-activity__card--img">
-                                <img src="images/activites/reno-laithienne.jpg" alt="activity image">
+                                <img src="images/activites/reno-laithienne.jpg" alt="Vieux-Port">
                             </div>
                             <h3 class="booki-activity__card--title">Vieux-Port</h3>
                         </article>
@@ -322,7 +301,7 @@
                     <a href="#" class="booki-activity__card">
                         <article>
                             <div class="booki-activity__card--img">
-                                <img src="images/activites/paul-hermann.jpg" alt="activity image">
+                                <img src="images/activites/paul-hermann.jpg" alt="Fort de Pomègues">
                             </div>
                             <h3 class="booki-activity__card--title">Fort de Pomègues</h3>
                         </article>
@@ -330,7 +309,7 @@
                     <a href="#" class="booki-activity__card">
                         <article>
                             <div class="booki-activity__card--img">
-                                <img src="images/activites/kilyan-sockalingum.jpg" alt="activity image">
+                                <img src="images/activites/kilyan-sockalingum.jpg" alt="Parc national des Calanques">
                             </div>
                             <h3 class="booki-activity__card--title">Parc national des Calanques</h3>
                         </article>
@@ -338,57 +317,47 @@
                     <a href="#" class="booki-activity__card">
                         <article>
                             <div class="booki-activity__card--img">
-                                <img src="images/activites/florian-wehde.jpg" alt="activity image">
+                                <img src="images/activites/florian-wehde.jpg" alt="Notre-Dame-de-la-Garde">
                             </div>
-                            <h3 class="booki-activity__card--title">Notre-Dame-de-la-Gare</h3>
+                            <h3 class="booki-activity__card--title">Notre-Dame-de-la-Garde</h3>
                         </article>
                     </a>
                 </div>
             </section>
         </main>
+
+        <!-- FOOTER -->
         <footer class="booki-footer px-3 py-4">
-            <div class="booki-footer__card">
-                <div class="booki-footer--title">A propos</div>
-                <div class="booki-footer--nav">
+            <section class="booki-footer__card" aria-labelledby="footer-about">
+                <h3 id="footer-about" class="booki-footer--title">À propos</h3>
+                <nav class="booki-footer--nav" aria-label="À propos">
                     <ul>
-                        <li>
-                            <a href="#">Fonctionnement du site</a>
-                        </li>
-                        <li>
-                            <a href="#">Conditions générales</a>
-                        </li>
-                        <li>
-                            <a href="#">Données de confidentialité</a>
-                        </li>
+                        <li><a href="#">Fonctionnement du site</a></li>
+                        <li><a href="#">Conditions générales</a></li>
+                        <li><a href="#">Données de confidentialité</a></li>
                     </ul>
-                </div>
-            </div>
-            <div class="booki-footer__card">
-                <div class="booki-footer--title">Nos hébergements</div>
-                <div class="booki-footer--nav">
+                </nav>
+            </section>
+
+            <section class="booki-footer__card" aria-labelledby="footer-hosting">
+                <h3 id="footer-hosting" class="booki-footer--title">Nos hébergements</h3>
+                <nav class="booki-footer--nav" aria-label="Nos hébergements">
                     <ul>
-                        <li>
-                            <a href="#">Charte qualité</a>
-                        </li>
-                        <li>
-                            <a href="#">Proposer votre hôtel</a>
-                        </li>
+                        <li><a href="#">Charte qualité</a></li>
+                        <li><a href="#">Proposer votre hôtel</a></li>
                     </ul>
-                </div>
-            </div>
-            <div class="booki-footer__card">
-                <div class="booki-footer--title">Assistance</div>
-                <div class="booki-footer--nav">
+                </nav>
+            </section>
+
+            <section class="booki-footer__card" aria-labelledby="footer-help">
+                <h3 id="footer-help" class="booki-footer--title">Assistance</h3>
+                <nav class="booki-footer--nav" aria-label="Assistance">
                     <ul>
-                        <li>
-                            <a href="#">Centre d'aide</a>
-                        </li>
-                        <li>
-                            <a href="#">Nous contacter</a>
-                        </li>
+                        <li><a href="#">Centre d'aide</a></li>
+                        <li><a href="#">Nous contacter</a></li>
                     </ul>
-                </div>
-            </div>
+                </nav>
+            </section>
         </footer>
     </div>
 </body>

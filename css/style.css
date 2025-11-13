@@ -24,6 +24,10 @@ body {
     height: 100%;
 }
 
+body {
+    margin: 0 50px;
+}
+
 #booki-layout {
     max-width: 1400px;
     margin: 0 auto;
@@ -102,16 +106,17 @@ a {
 /* (=^ᆺ^=) HEADER (=^ᆺ^=) */
 
 .booki-header {
-    height: 120px;
+    height: auto;
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .booki-header__logo {
-    width: 100%;
+    width: auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -121,7 +126,7 @@ a {
 
 .booki-header-nav {
     display: flex;
-    width: 100%;
+    width: auto;
 }
 
 .booki-header-nav a {
@@ -129,26 +134,30 @@ a {
 }
 
 a.booki-header-nav__link {
-    width: 50%;
+    width: 150px;
     display: flex;
     justify-content: center;
-    border-bottom: 2px solid var(--gray-color);
+    align-items: center;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
 }
 
 .booki-header-nav .booki-header-nav__link:focus,
-.booki-header-nav .booki-header-nav__link:hover,
-.booki-header-nav .booki-header-nav__link.active {
-    border-bottom: 2px solid var(--blue-color);
-    border-top: none;
+.booki-header-nav .booki-header-nav__link:hover {
+    border-top: 2px solid var(--blue-color);
+    border-bottom-color: transparent;
 }
 
 a.booki-header-nav__link:focus>span,
-a.booki-header-nav__link:hover>span,
-.active>span {
+a.booki-header-nav__link:hover>span {
     color: var(--blue-color);
 }
 
 /* (=^ᆺ^=) TITLE (=^ᆺ^=) */
+
+.booki-title {
+    padding: 31px 0 36px 0;
+}
 
 .booki-title h1 {
     margin-bottom: 13px;
@@ -161,7 +170,7 @@ a.booki-header-nav__link:hover>span,
     width: 100%;
     max-width: 418px;
     height: 50px;
-    padding: 0 20px;
+    padding: 0;
 }
 
 .booki-form__img {
@@ -200,18 +209,18 @@ a.booki-header-nav__link:hover>span,
 
 .booki-form__button {
     display: flex;
-    min-width: 49px;
+    min-width: 132px;
     justify-content: center;
     align-items: center;
     background-color: var(--blue-color);
     color: #fff;
     border: none;
-    border-radius: var(--radius-sm);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     cursor: pointer;
 }
 
 .booki-form__button--search {
-    display: none;
+    display: block;
     font-weight: 700;
     font-size: 18px;
     color: #fff;
@@ -221,31 +230,42 @@ a.booki-header-nav__link:hover>span,
     width: 16px;
 }
 
+.booki-form__button i {
+    display: none;
+}
+
 /* (=^ᆺ^=) FILTER (=^ᆺ^=) */
 
-.booki-filter__title p {
+.booki-filter__title {
     font-size: 18px;
     font-weight: 700;
     margin: 0 20px 5px 0;
 }
 
+.booki-filter {
+    padding: 34px 0;
+    display: flex;
+    align-items: center;
+}
+
 .booki-filter-all {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .booki-filter__tag {
     display: flex;
     align-items: center;
     height: 50px;
-    width: 49%;
     padding: 10px 15px;
-    margin: 5px 0;
+    margin: 5px 20px 5px 0;
+    background: transparent;
     border: 2px solid var(--gray-color);
     border-radius: 25px;
     cursor: pointer;
     transition: background-color .15s ease-in-out;
+    width: auto;
 }
 
 .booki-filter__tag:hover {
@@ -256,7 +276,7 @@ a.booki-header-nav__link:hover>span,
     display: flex;
     align-items: center;
     font-weight: 700;
-    font-size: 11px;
+    font-size: 17px;
     margin-left: 10px;
 }
 
@@ -265,7 +285,7 @@ a.booki-header-nav__link:hover>span,
 .booki-info {
     display: flex;
     align-items: center;
-    padding-bottom: 39px;
+    padding: 0 0 39px 0;
 }
 
 .booki-info i {
@@ -287,13 +307,18 @@ a.booki-header-nav__link:hover>span,
 
 .booki-double {
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 40px;
 }
 
 /* (=^ᆺ^=) MOST POPULAR (=^ᆺ^=) */
 
 .booki-most-popular {
     background-color: var(--graybg-color);
+    border-radius: var(--radius-lg);
+    padding: 40px 37px;
+    width: 430px;
 }
 
 .booki-most-popular__title {
@@ -308,6 +333,7 @@ a.booki-header-nav__link:hover>span,
 
 .booki-most-popular-row {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
 }
@@ -374,13 +400,22 @@ a.booki-header-nav__link:hover>span,
     margin-bottom: 14px;
 }
 
+.booki-accommodation {
+    background-color: var(--graybg-color);
+    border-radius: var(--radius-lg);
+    padding: 40px 37px;
+    margin-bottom: 0;
+    width: 920px;
+}
+
 .booki-accommodation-row {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .booki-accommodation__card {
-    width: 100%;
+    width: 31%;
     height: 199px;
     margin: 10px 0;
     background-color: #fff;
@@ -439,8 +474,8 @@ a.booki-header-nav__link:hover>span,
 }
 
 .booki-activity__card {
-    width: 100%;
-    height: 190px;
+    width: 23%;
+    height: 444px;
     margin: 15px 0;
     background-color: #fff;
     border-radius: var(--radius-lg);
@@ -449,7 +484,7 @@ a.booki-header-nav__link:hover>span,
 
 .booki-activity__card--img img {
     width: 100%;
-    height: 134px;
+    height: 388px;
     object-fit: cover;
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
@@ -473,7 +508,7 @@ a.booki-header-nav__link:hover>span,
 }
 
 .booki-footer__card {
-    width: 100%;
+    width: 33%;
     margin-bottom: 40px;
 }
 
@@ -493,114 +528,22 @@ a.booki-header-nav__link:hover>span,
     text-decoration: none;
 }
 
-/* (=^ᆺ^=) MEDIA QUERIES — TABLETTE & PLUS (>=1024px) (=^ᆺ^=)*/
+/* (=^ᆺ^=) MEDIA QUERIES — TABLETTE (-1439px) (=^ᆺ^=) */
 
-@media screen and (min-width: 1024px) {
-
-    body {
-        margin: 0 50px;
-    }
-
-    /* (=^ᆺ^=) HEADER (=^ᆺ^=) */
-
-    .booki-header {
-        height: auto;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-
-    .booki-header__logo {
-        width: auto;
-        justify-content: flex-start;
-    }
-
-    .booki-header-nav {
-        width: auto;
-    }
-
-    a.booki-header-nav__link {
-        width: 150px;
-        border-bottom: 2px solid transparent;
-        align-items: center;
-    }
-
-    .active {
-        border-top: 2px solid var(--blue-color);
-    }
-
-    a.booki-header-nav__link:hover,
-    a.booki-header-nav__link:focus {
-        border-top: 2px solid var(--blue-color);
-        border-bottom: none;
-    }
-
-    /* (=^ᆺ^=) TITLE (=^ᆺ^=) */
-
-    .booki-title {
-        padding: 31px 0 36px 0;
-    }
-
-    /* (=^ᆺ^=) FORM (=^ᆺ^=) */
-
-    .booki-form {
-        padding: 0;
-    }
-
-    .booki-form__button {
-        min-width: 132px;
-        border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    }
-
-    .booki-form__button--search {
-        display: block;
-    }
-
-    .booki-form__button i {
-        display: none;
-    }
-
-    /* (=^ᆺ^=) FILTER (=^ᆺ^=) */
-
-    .booki-filter {
-        padding: 34px 0;
-        display: flex;
-        align-items: center;
-    }
-
-    .booki-filter-all {
-        justify-content: flex-start;
-    }
-
-    .booki-filter__tag {
-        width: auto;
-        margin-right: 20px;
-    }
-
-    .booki-filter__tag p {
-        font-size: 17px;
-    }
-
-    /* (=^ᆺ^=) INFO (=^ᆺ^=) */
-
-    .booki-info {
-        padding: 0 0 39px 0;
-    }
+@media screen and (max-width: 1439px) {
 
     /* (=^ᆺ^=) DOUBLE (=^ᆺ^=) */
 
     .booki-double {
         flex-direction: column-reverse;
+        justify-content: flex-start;
+        gap: 0;
     }
 
     /* (=^ᆺ^=) MOST POPULAR (=^ᆺ^=) */
 
-    .booki-most-popular__card {
-        margin: 10px;
-    }
-
     .booki-most-popular {
-        border-radius: var(--radius-lg);
+        width: 100%;
     }
 
     .booki-most-popular-row {
@@ -608,88 +551,173 @@ a.booki-header-nav__link:hover>span,
         flex-wrap: nowrap;
     }
 
+    .booki-most-popular__card {
+        margin: 10px;
+    }
+
     /* (=^ᆺ^=) ACCOMMODATION (=^ᆺ^=) */
 
     .booki-accommodation {
-        background-color: var(--graybg-color);
-        border-radius: var(--radius-lg);
-        padding: 40px 37px;
+        width: 100%;
         margin-bottom: 53px;
-    }
-
-    .booki-accommodation-row {
-        justify-content: space-between;
-    }
-
-    .booki-accommodation__card {
-        width: 31%;
     }
 
     /* (=^ᆺ^=) ACTIVITY (=^ᆺ^=) */
 
     .booki-activity__card {
-        width: 23%;
         height: 300px;
     }
 
     .booki-activity__card--img img {
         height: 244px;
     }
-
-    .booki-activity__card--title {
-        height: 45px;
-    }
-
-    /* (=^ᆺ^=) FOOTER (=^ᆺ^=) */
-
-    .booki-footer__card {
-        width: 33%;
-    }
 }
 
-/* (=^ᆺ^=) MEDIA QUERIES — DESKTOP (>=1440px) (=^ᆺ^=) */
+/* (=^ᆺ^=) MEDIA QUERIES — MOBILE (-1023px) (=^ᆺ^=) */
 
-@media screen and (min-width: 1440px) {
+@media screen and (max-width: 1023px) {
+
+    body {
+        margin: 0;
+    }
+
+    /* (=^ᆺ^=) HEADER (=^ᆺ^=) */
+
+    .booki-header {
+        height: 120px;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .booki-header__logo {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .booki-header-nav {
+        width: 100%;
+    }
+
+    a.booki-header-nav__link {
+        width: 50%;
+        padding: 16px 0;
+        border-bottom: 2px solid var(--gray-color);
+    }
+
+    .booki-header-nav .booki-header-nav__link:focus,
+    .booki-header-nav .booki-header-nav__link:hover {
+        border-bottom: 2px solid var(--blue-color);
+        border-top: none;
+    }
+
+    /* (=^ᆺ^=) TITLE (=^ᆺ^=) */
+
+    .booki-title {
+        padding: 25px 16px;
+    }
+
+    /* (=^ᆺ^=) FORM (=^ᆺ^=) */
+
+    .booki-form {
+        padding: 0 20px;
+    }
+
+    .booki-form__button {
+        min-width: 49px;
+        border-radius: var(--radius-sm);
+    }
+
+    .booki-form__button--search {
+        display: none;
+    }
+
+    .booki-form__button i {
+        display: inline-block;
+    }
+
+    /* (=^ᆺ^=) FILTER (=^ᆺ^=) */
+
+    .booki-filter {
+        padding: 34px 16px;
+        display: block;
+        align-items: flex-start;
+    }
+
+    .booki-filter-all {
+        justify-content: space-between;
+    }
+
+    .booki-filter__tag {
+        width: 49%;
+        margin: 5px 0;
+    }
+
+    .booki-filter__tag p {
+        font-size: 11px;
+    }
+
+    /* (=^ᆺ^=) INFO (=^ᆺ^=) */
+
+    .booki-info {
+        padding: 0 16px 34px 16px;
+    }
 
     /* (=^ᆺ^=) DOUBLE (=^ᆺ^=) */
 
     .booki-double {
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        gap: 40px;
+        flex-direction: column;
     }
 
     /* (=^ᆺ^=) MOST POPULAR (=^ᆺ^=) */
 
     .booki-most-popular {
-        padding: 40px 37px;
-        width: 430px;
+        border-radius: 0;
+        padding: 34px 16px;
     }
 
     .booki-most-popular-row {
-        flex-direction: column;
         flex-wrap: wrap;
     }
 
     .booki-most-popular__card {
-        width: 100%;
         margin: 10px 0;
     }
 
     /* (=^ᆺ^=) ACCOMMODATION (=^ᆺ^=) */
 
     .booki-accommodation {
-        width: 920px;
+        background-color: transparent;
+        border-radius: 0;
+        padding: 0;
+        width: 100%;
         margin-bottom: 0;
+        padding: 34px 16px;
+
+    }
+
+    .booki-accommodation-row {
+        justify-content: flex-start;
+    }
+
+    .booki-accommodation__card {
+        width: 100%;
     }
 
     /* (=^ᆺ^=) ACTIVITY (=^ᆺ^=) */
 
     .booki-activity__card {
-        height: 444px;
+        width: 100%;
+        height: 190px;
     }
 
     .booki-activity__card--img img {
-        height: 388px;
+        height: 134px;
+    }
+
+    /* (=^ᆺ^=) FOOTER (=^ᆺ^=) */
+
+    .booki-footer__card {
+        width: 100%;
     }
 }
