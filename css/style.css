@@ -528,9 +528,9 @@ a.booki-header-nav__link:hover>span {
     text-decoration: none;
 }
 
-/* (=^ᆺ^=) MEDIA QUERIES — TABLETTE (-1439px) (=^ᆺ^=) */
+/* (=^ᆺ^=) MEDIA QUERIES — TABLETTE (-1024px) (=^ᆺ^=) */
 
-@media screen and (max-width: 1439px) {
+@media screen and (max-width: 1024px) {
 
     /* (=^ᆺ^=) DOUBLE (=^ᆺ^=) */
 
@@ -573,9 +573,9 @@ a.booki-header-nav__link:hover>span {
     }
 }
 
-/* (=^ᆺ^=) MEDIA QUERIES — MOBILE (-1023px) (=^ᆺ^=) */
+/* (=^ᆺ^=) MEDIA QUERIES — MOBILE (-767px) (=^ᆺ^=) */
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 767px) {
 
     body {
         margin: 0;
